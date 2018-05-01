@@ -1,0 +1,30 @@
+.boatlist-content {
+    .breadcrump-container {
+      max-width: 820px;
+      margin: 0 auto;
+  
+      .breadcrumps {
+        //border-left: 1px solid #ddd;
+        //border-right: 1px solid #ddd;
+        list-style: none;
+        overflow: hidden;
+        font: 18px Sans-Serif;
+  
+        li {
+          float: left;
+          width: 20%;
+  
+          .form-group {
+            position: relative;
+            display: block;
+          }
+          
+          
+        }
+        
+      }
+      
+      
+    }
+  }
+  

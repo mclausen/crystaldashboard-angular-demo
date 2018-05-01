@@ -1,0 +1,26 @@
+<div class="boatDispatch-content">
+
+
+
+    <div *ngIf="shouldDisplayCustomDispatchTime" class="breadcrump-container">
+        <ul class="breadcrumps">
+            <li>
+                <div class="form-group">
+                    <label for="departureTimeInput">Select Dispatch Time</label>
+                    <input class="form-control" id="departureTimeInput" required type="time" />
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="expectedReturnTimeInput">Select Expected return time</label>
+                    <input class="form-control" id="expectedReturnTimeInput" required type="time" />
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="createNewDispatch" *ngIf="shouldDisplayCreateNewDispatchButton">
+        <p>No dispatch found, would you like to create one?</p>
+        <button>Create Dispatch</button>
+    </div>
+</div>

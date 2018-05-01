@@ -1,0 +1,43 @@
+<div class="boatlist-content">
+    <div class="breadcrump-container">
+        <ul class="breadcrumps">
+            <li>
+                    <div class="form-group">
+                            <label for="boatselector">Select boat</label>
+                            <select class="form-control" id="boatselector" (change)="boatChanged($event.target.value)">
+                                <option>None selected</option>
+                                <option *ngFor="let boat of boatList" [value]="boat.id">{{boat.name}}</option>
+                            </select> 
+                        </div>
+            </li>
+
+            <li *ngIf="shouldDisplayDateSelection">
+                    <div class="form-group">
+                            <label for="dateselector">Select Date</label>
+                            <input class="form-control" 
+                            id="dateselector" 
+                            required type="date"
+                            (change)="dateChanged($event.target.value)" />
+                        </div>
+            </li>
+
+            <li *ngIf="shouldDisplayDispatchSelection">
+                    <div class="form-group">
+                            <label for="dispatchtimeselector">Dispatch time</label>
+                           <select class="form-control" id="dispatchtimeselector" (change)="dispatchTimeChanged($event.target.value)">
+                                <option>None selected</option>
+                            <option *ngFor="let dispatchTime of dispatchTimes" [value]="dispatchTime.id">{{dispatchTime.displayTitle}}</option>
+                           </select>
+                        </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<app-boatdispatch 
+    [disptchTime]="selectedDispatch" 
+    [date]="selectedDate" 
+    [boat]="selectedBoat"
+    *ngIf="shouldDisplayDispatchView">
+</app-boatdispatch>
